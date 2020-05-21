@@ -20,6 +20,7 @@ import mabay.domain.Urun;
 import org.hibernate.criterion.MatchMode;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,5 +62,25 @@ public class UrunEntityService {
 
     public List<Urun> findUrunByUrunAdiLike(String urunAdi, MatchMode matchMode) {
         return urunDao.findUrunByUrunAdiLike(urunAdi, matchMode);
+    }
+
+    public List<Urun> findAllOrderByFiyatAsc() {
+        return urunDao.findAllOrderByFiyatAsc();
+    }
+
+    public List<Urun> findAllOrderByFiyatDesc() {
+        return urunDao.findAllOrderByFiyatDesc();
+    }
+
+    public List<Urun> findAllUrunWithLimit(int limit) {
+        return urunDao.findAllUrunWithLimit(limit);
+    }
+
+    public List<Urun> findUrunBySonKullanmaTarihiGreaterThanEqual(Date sonKullanmaTarihi) {
+        return urunDao.findUrunBySonKullanmaTarihiGreaterThanEqual(sonKullanmaTarihi);
+    }
+
+    public Long sumStokMiktariByUrunTuruId(Long id) {
+        return urunDao.sumStokMiktariByUrunTuruId(id);
     }
 }

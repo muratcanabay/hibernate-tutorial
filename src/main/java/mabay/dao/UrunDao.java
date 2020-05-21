@@ -24,6 +24,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.query.Query;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -123,6 +124,7 @@ public class UrunDao {
 
     /**
      * Verilen urunAdi ve matchMode'a göre ürünleri listeler.
+     *
      * @param urunAdi
      * @param matchMode
      * @return
@@ -151,5 +153,69 @@ public class UrunDao {
         }
 
         return hql.list();
+    }
+
+    /**
+     * Urunlerin fiyatlara göre artan şekilde sıralar.
+     *
+     * @return
+     */
+    public List<Urun> findAllOrderByFiyatAsc() {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("Select urun from Urun urun order by urun.fiyat asc");
+        return hql.list();
+    }
+
+    /**
+     * Urunlerin fiyatlara göre azalan şekilde sıralar.
+     *
+     * @return
+     */
+    public List<Urun> findAllOrderByFiyatDesc() {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("Select urun from Urun urun order by urun.fiyat desc");
+        return hql.list();
+    }
+
+    /**
+     * Urunleri, verilen limit parametresi sayısı kadar getirir.
+     *
+     * @param limit
+     * @return
+     */
+    public List<Urun> findAllUrunWithLimit(int limit) {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("Select urun from Urun urun")
+                .setMaxResults(limit);
+        return hql.list();
+    }
+
+    /**
+     * Verilen son kullanma tarihinden sonraki ürünleri listeler.
+     *
+     * @param sonKullanmaTarihi
+     * @return
+     * @see: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+     */
+    public List<Urun> findUrunBySonKullanmaTarihiGreaterThanEqual(Date sonKullanmaTarihi) {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("Select urun from Urun urun " +
+                "where urun.sonKullanmaTarihi >= :sonKullanmaTarihi")
+                .setParameter("sonKullanmaTarihi", sonKullanmaTarihi);
+        return hql.list();
+    }
+
+    /**
+     * Verilen UrunTuru id'ye göre stoktaki ürünlerin sayısını döndürür.
+     *
+     * @param id
+     * @return
+     */
+    public Long sumStokMiktariByUrunTuruId(Long id) {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("Select sum(urun.stokMiktari) from Urun urun " +
+                "where urunTuru.id = :id")
+                .setParameter("id", id);
+        return (Long) hql.uniqueResult();
     }
 }

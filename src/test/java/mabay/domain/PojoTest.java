@@ -8,6 +8,8 @@ import org.hibernate.criterion.MatchMode;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -29,9 +31,9 @@ public class PojoTest {
     @Test
     public void saveUrunTest() {
         Urun urun = new Urun();
-        urun.setAdi("Domates");
-        urun.setFiyat(BigDecimal.valueOf(15));
-        urun.setEnumUrunBirim(EnumUrunBirim.KILO);
+        urun.setAdi("Süt");
+        urun.setFiyat(BigDecimal.valueOf(5));
+        urun.setEnumUrunBirim(EnumUrunBirim.LITRE);
         urun.setSonKullanmaTarihi(new Date());
 
         urunEntityService.save(urun);
@@ -107,5 +109,44 @@ public class PojoTest {
     public void findUrunByUrunAdiEnd() {
         List<Urun> urunList = urunEntityService
                 .findUrunByUrunAdiLike("s", MatchMode.END);
+    }
+
+    @Test
+    public void findAllOrderByFiyatAsc() {
+        List<Urun> urunList = urunEntityService.findAllOrderByFiyatAsc();
+    }
+
+    @Test
+    public void findAllOrderByFiyatDesc() {
+        List<Urun> urunList = urunEntityService.findAllOrderByFiyatDesc();
+    }
+
+    @Test
+    public void findAllUrunWithLimit() {
+        List<Urun> urunList = urunEntityService.findAllUrunWithLimit(1);
+    }
+
+    @Test
+    /**
+     * @see: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+     */
+    public void findUrunBySonKullanmaTarihiGreaterThanEqual() {
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date sonKullanmaTarihi = null;
+
+        try {
+            sonKullanmaTarihi = simpleDateFormat.parse("2020-05-21");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        List<Urun> urunList = urunEntityService
+                .findUrunBySonKullanmaTarihiGreaterThanEqual(sonKullanmaTarihi);
+    }
+
+    @Test
+    public void sumStokMiktariByUrunTuruId() {
+        Long stokMiktari = urunEntityService.sumStokMiktariByUrunTuruId(Long.valueOf(52));
     }
 }
