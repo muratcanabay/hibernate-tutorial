@@ -16,6 +16,7 @@
 package mabay.dao;
 
 import mabay.domain.Urun;
+import mabay.dto.UrunDto;
 import mabay.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -217,5 +218,17 @@ public class UrunDao {
                 "where urunTuru.id = :id")
                 .setParameter("id", id);
         return (Long) hql.uniqueResult();
+    }
+
+    /**
+     * Projection
+     *
+     * @return
+     */
+    public List<UrunDto> findAllUrunDto() {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("select urun.id, urun.adi, urun.fiyat " +
+                "from Urun urun");
+        return hql.list();
     }
 }

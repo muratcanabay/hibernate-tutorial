@@ -1,5 +1,6 @@
 package mabay.domain;
 
+import mabay.dto.UrunDto;
 import mabay.entityservice.UrunEntityService;
 import mabay.entityservice.UrunTuruEntityService;
 import mabay.enums.EnumUrunBirim;
@@ -29,7 +30,7 @@ public class PojoTest {
     private UrunTuruEntityService urunTuruEntityService = new UrunTuruEntityService();
 
     @Test
-    public void saveUrunTest() {
+    public void saveUrun() {
         Urun urun = new Urun();
         urun.setAdi("Süt");
         urun.setFiyat(BigDecimal.valueOf(5));
@@ -40,7 +41,7 @@ public class PojoTest {
     }
 
     @Test
-    public void saveUrunTuruTest() {
+    public void saveUrunTuru() {
         UrunTuru urunTuru = new UrunTuru();
         urunTuru.setAdi("Bakkal ürünü");
         urunTuru.setEnumUrunTuru(EnumUrunTuru.YIYECEK);
@@ -49,13 +50,13 @@ public class PojoTest {
     }
 
     @Test
-    public void findAllUrunTest() {
+    public void findAllUrun() {
         List<Urun> urunList = urunEntityService.findAll();
         assertThat(urunList.isEmpty(), is(false));
     }
 
     @Test
-    public void findAllUrunTuruTest() {
+    public void findAllUrunTuru() {
         List<UrunTuru> urunTuruList = urunTuruEntityService.findAll();
         assertThat(urunTuruList.isEmpty(), is(false));
     }
@@ -148,5 +149,10 @@ public class PojoTest {
     @Test
     public void sumStokMiktariByUrunTuruId() {
         Long stokMiktari = urunEntityService.sumStokMiktariByUrunTuruId(Long.valueOf(52));
+    }
+
+    @Test
+    public void findAllUrunDto() {
+        List<UrunDto> urunList = urunEntityService.findAllUrunDto();
     }
 }

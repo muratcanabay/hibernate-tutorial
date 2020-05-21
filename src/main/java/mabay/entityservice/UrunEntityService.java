@@ -17,6 +17,7 @@ package mabay.entityservice;
 
 import mabay.dao.UrunDao;
 import mabay.domain.Urun;
+import mabay.dto.UrunDto;
 import org.hibernate.criterion.MatchMode;
 
 import java.math.BigDecimal;
@@ -82,5 +83,9 @@ public class UrunEntityService {
 
     public Long sumStokMiktariByUrunTuruId(Long id) {
         return urunDao.sumStokMiktariByUrunTuruId(id);
+    }
+
+    public List<UrunDto> findAllUrunDto() {
+        return urunDao.findAllUrunDto();
     }
 }
