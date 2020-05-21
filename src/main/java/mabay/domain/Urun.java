@@ -48,10 +48,13 @@ public class Urun {
 
     @Column(name = "SON_KULLANMA_TARIHI")
     @Temporal(TemporalType.DATE)
-    private Date SonKullanmaTarihi;
+    private Date sonKullanmaTarihi;
+
+    @Column(name = "STOK_MIKTARI")
+    private Long stokMiktari;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "URUN_TURU", foreignKey = @ForeignKey(name = "FK_URUN_URUN_TURU"))
+    @JoinColumn(name = "ID_URUN_TURU", foreignKey = @ForeignKey(name = "FK_URUN_URUN_TURU"))
     private UrunTuru urunTuru;
 
     public Long getId() {
@@ -87,11 +90,19 @@ public class Urun {
     }
 
     public Date getSonKullanmaTarihi() {
-        return SonKullanmaTarihi;
+        return sonKullanmaTarihi;
     }
 
     public void setSonKullanmaTarihi(Date sonKullanmaTarihi) {
-        SonKullanmaTarihi = sonKullanmaTarihi;
+        this.sonKullanmaTarihi = sonKullanmaTarihi;
+    }
+
+    public Long getStokMiktari() {
+        return stokMiktari;
+    }
+
+    public void setStokMiktari(Long stokMiktari) {
+        this.stokMiktari = stokMiktari;
     }
 
     public UrunTuru getUrunTuru() {
