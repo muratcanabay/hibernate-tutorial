@@ -17,6 +17,7 @@ package mabay.entityservice;
 
 import mabay.dao.UrunDao;
 import mabay.domain.Urun;
+import mabay.dto.UrunBilgiDto;
 import mabay.dto.UrunDto;
 import org.hibernate.criterion.MatchMode;
 
@@ -87,5 +88,9 @@ public class UrunEntityService {
 
     public List<UrunDto> findAllUrunDto() {
         return urunDao.findAllUrunDto();
+    }
+
+    public List<UrunBilgiDto> findAllUrunBilgiDto() {
+        return urunDao.findAllUrunBilgiDto();
     }
 }

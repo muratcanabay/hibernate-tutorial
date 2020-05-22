@@ -1,5 +1,6 @@
 package mabay.domain;
 
+import mabay.dto.UrunBilgiDto;
 import mabay.dto.UrunDto;
 import mabay.entityservice.UrunEntityService;
 import mabay.entityservice.UrunTuruEntityService;
@@ -153,6 +154,11 @@ public class PojoTest {
 
     @Test
     public void findAllUrunDto() {
-        List<UrunDto> urunList = urunEntityService.findAllUrunDto();
+        List<UrunDto> urunDtoList = urunEntityService.findAllUrunDto();
+    }
+
+    @Test
+    public void findAllUrunBilgiDto() {
+        List<UrunBilgiDto> urunBilgiDtoList = urunEntityService.findAllUrunBilgiDto();
     }
 }

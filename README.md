@@ -1,4 +1,4 @@
-## Projenin Amacı
+# Projenin Amacı
 
 ![Hibernate logo](http://static.jboss.org/hibernate/images/hibernate_logo_whitebkg_200px.png)
 

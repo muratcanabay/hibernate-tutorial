@@ -16,6 +16,7 @@
 package mabay.dao;
 
 import mabay.domain.Urun;
+import mabay.dto.UrunBilgiDto;
 import mabay.dto.UrunDto;
 import mabay.util.HibernateUtil;
 import org.hibernate.Session;
@@ -229,6 +230,21 @@ public class UrunDao {
         Session session = sessionFactory.openSession();
         Query hql = session.createQuery("select urun.id, urun.adi, urun.fiyat " +
                 "from Urun urun");
+        return hql.list();
+    }
+
+    /**
+     * Join
+     * <p>
+     * Sql karşılığı: select * from urun,urun_turu where urun.id = urun_turu.id;
+     *
+     * @return
+     */
+    public List<UrunBilgiDto> findAllUrunBilgiDto() {
+        Session session = sessionFactory.openSession();
+        Query hql = session.createQuery("select urun.id, urun.adi, urun.fiyat, urun.sonKullanmaTarihi, urun.stokMiktari, urunTuru.adi " +
+                " from Urun urun, UrunTuru urunTuru" +
+                " where urun.id = urunTuru.id");
         return hql.list();
     }
 }
