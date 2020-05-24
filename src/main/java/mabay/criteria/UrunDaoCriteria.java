@@ -47,4 +47,15 @@ public class UrunDaoCriteria {
         query.select(root);
         return session.createQuery(query).getResultList();
     }
+
+    public Urun findByIdWithCriteria(Long id) {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Urun> query = criteriaBuilder.createQuery(Urun.class);
+        Root<Urun> root = query.from(Urun.class);
+        query.select(root).where(
+                criteriaBuilder.equal(root.get("id"), id)
+        );
+        return session.createQuery(query).uniqueResult();
+    }
 }

@@ -37,4 +37,7 @@ public class UrunDaoCriteriaEntityService {
     public List<Urun> findAllWithCriteria() {
         return urunDaoCriteria.findAllWithCriteria();
     }
+
+    public Urun findByIdWithCriteria(Long id) {return urunDaoCriteria.findByIdWithCriteria(id);}
+
 }
