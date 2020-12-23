@@ -1,18 +1,3 @@
-/*
- * Copyright 2020 Universal Bilgi Teknolojileri.
- *
- * UKL 1.1 lisansı ile lisanslanmıştır. Bu dosyanın lisans koşullarına uygun
- * olmayan şekilde kullanımı yasaklanmıştır. Lisansın bir kopyasını aşağıdaki
- * linkten edinebilirsiniz.
- *
- * http://www.uni-yaz.com/lisans/ukl_1_1.pdf
- *
- * Yasalar aksini söylemediği veya yazılı bir sözleşme ile aksi belirtilmediği sürece,
- * bu yazılım mevcut hali ile hiç bir garanti vermeden veya herhangi bir şart ileri
- * sürmeden dağıtılır. Bu yazılımın edinim izinleri ve limitler konusunda lisans
- * sözleşmesine bakınız.
- *
- */
 package mabay.dao;
 
 import mabay.domain.Urun;
@@ -29,12 +14,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-/**
- * UrunDao
- *
- * @author Murat Can Abay
- * @since 0.23.0
- */
 public class UrunDao {
     private SessionFactory sessionFactory;
 
