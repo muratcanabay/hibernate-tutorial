@@ -18,13 +18,6 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * PojoTest
- *
- * @author Murat Can Abay
- * @since 0.21.0
- */
-
 public class PojoTest {
 
     private UrunEntityService urunEntityService = new UrunEntityService();
