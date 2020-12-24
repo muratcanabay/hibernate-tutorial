@@ -1,4 +1,4 @@
-package mabay.domain;
+package io.github.muratcanabay.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package mabay.entityservice;
+package io.github.muratcanabay.entityservice;
 
-import mabay.dao.UrunTuruDao;
-import mabay.domain.UrunTuru;
+import io.github.muratcanabay.dao.UrunTuruDao;
+import io.github.muratcanabay.domain.UrunTuru;
 
 import java.util.List;
 

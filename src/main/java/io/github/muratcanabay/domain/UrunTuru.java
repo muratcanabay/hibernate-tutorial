@@ -1,6 +1,6 @@
-package mabay.domain;
+package io.github.muratcanabay.domain;
 
-import mabay.enums.EnumUrunTuru;
+import io.github.muratcanabay.enums.EnumUrunTuru;
 
 import javax.persistence.*;
 import java.util.HashSet;

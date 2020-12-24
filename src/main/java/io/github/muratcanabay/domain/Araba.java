@@ -1,4 +1,4 @@
-package mabay.domain;
+package io.github.muratcanabay.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,16 +7,17 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "PLAKA")
+@Table(name = "ARABA")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Plaka {
+public class Araba {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY, orphanRemoval = true)
-    private Araba araba;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Plaka plaka;
+
 }

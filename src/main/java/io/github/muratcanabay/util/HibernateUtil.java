@@ -1,5 +1,6 @@
-package mabay.util;
+package io.github.muratcanabay.util;
 
+import io.github.muratcanabay.domain.*;
 import mabay.domain.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

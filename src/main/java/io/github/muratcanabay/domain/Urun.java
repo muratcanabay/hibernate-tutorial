@@ -1,6 +1,6 @@
-package mabay.domain;
+package io.github.muratcanabay.domain;
 
-import mabay.enums.EnumUrunBirim;
+import io.github.muratcanabay.enums.EnumUrunBirim;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

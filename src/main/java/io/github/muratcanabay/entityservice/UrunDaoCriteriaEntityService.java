@@ -1,7 +1,7 @@
-package mabay.entityservice;
+package io.github.muratcanabay.entityservice;
 
-import mabay.criteria.UrunDaoCriteria;
-import mabay.domain.Urun;
+import io.github.muratcanabay.criteria.UrunDaoCriteria;
+import io.github.muratcanabay.domain.Urun;
 
 import java.util.List;
 

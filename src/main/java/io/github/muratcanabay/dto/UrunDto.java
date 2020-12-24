@@ -1,4 +1,4 @@
-package mabay.dto;
+package io.github.muratcanabay.dto;
 
 import java.math.BigDecimal;
 

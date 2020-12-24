@@ -1,7 +1,7 @@
-package mabay.criteria;
+package io.github.muratcanabay.criteria;
 
-import mabay.domain.Urun;
-import mabay.util.HibernateUtil;
+import io.github.muratcanabay.domain.Urun;
+import io.github.muratcanabay.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

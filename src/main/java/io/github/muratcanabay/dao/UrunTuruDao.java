@@ -1,7 +1,7 @@
-package mabay.dao;
+package io.github.muratcanabay.dao;
 
-import mabay.domain.UrunTuru;
-import mabay.util.HibernateUtil;
+import io.github.muratcanabay.domain.UrunTuru;
+import io.github.muratcanabay.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

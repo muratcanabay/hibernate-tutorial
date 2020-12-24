@@ -1,4 +1,4 @@
-package mabay.enums;
+package io.github.muratcanabay.enums;
 
 public enum EnumUrunBirim {
     KILO("Kilo"),

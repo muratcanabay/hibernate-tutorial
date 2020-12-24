@@ -1,6 +1,6 @@
-package mabay.domain;
+package io.github.muratcanabay.domain;
 
-import mabay.entityservice.UrunDaoCriteriaEntityService;
+import io.github.muratcanabay.entityservice.UrunDaoCriteriaEntityService;
 import org.junit.Test;
 
 import java.util.List;

@@ -1,11 +1,11 @@
-package mabay.domain;
+package io.github.muratcanabay.domain;
 
-import mabay.dto.UrunBilgiDto;
-import mabay.dto.UrunDto;
-import mabay.entityservice.UrunEntityService;
-import mabay.entityservice.UrunTuruEntityService;
-import mabay.enums.EnumUrunBirim;
-import mabay.enums.EnumUrunTuru;
+import io.github.muratcanabay.dto.UrunBilgiDto;
+import io.github.muratcanabay.dto.UrunDto;
+import io.github.muratcanabay.entityservice.UrunEntityService;
+import io.github.muratcanabay.entityservice.UrunTuruEntityService;
+import io.github.muratcanabay.enums.EnumUrunBirim;
+import io.github.muratcanabay.enums.EnumUrunTuru;
 import org.hibernate.criterion.MatchMode;
 import org.junit.Test;
 

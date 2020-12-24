@@ -1,9 +1,9 @@
-package mabay.entityservice;
+package io.github.muratcanabay.entityservice;
 
-import mabay.dao.UrunDao;
-import mabay.domain.Urun;
-import mabay.dto.UrunBilgiDto;
-import mabay.dto.UrunDto;
+import io.github.muratcanabay.dao.UrunDao;
+import io.github.muratcanabay.domain.Urun;
+import io.github.muratcanabay.dto.UrunBilgiDto;
+import io.github.muratcanabay.dto.UrunDto;
 import org.hibernate.criterion.MatchMode;
 
 import java.math.BigDecimal;
