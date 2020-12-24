@@ -17,11 +17,11 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="mabay.domain.Pojo"></mapping>
-        <mapping class="mabay.domain.Araba"></mapping>
-        <mapping class="mabay.domain.Plaka"></mapping>
-        <mapping class="mabay.domain.Urun"></mapping>
-        <mapping class="mabay.domain.UrunTuru"></mapping>
+        <mapping class="io.github.muratcanabay.domain.Pojo"></mapping>
+        <mapping class="io.github.muratcanabay.domain.Araba"></mapping>
+        <mapping class="io.github.muratcanabay.domain.Plaka"></mapping>
+        <mapping class="io.github.muratcanabay.domain.Urun"></mapping>
+        <mapping class="io.github.muratcanabay.domain.UrunTuru"></mapping>
 
     </session-factory>
 </hibernate-configuration>
